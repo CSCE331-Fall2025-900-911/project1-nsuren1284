@@ -1,18 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Nandana Surendran's Website</title>
+  <link id="theme-css" rel="stylesheet" href="css/version1.css">
 </head>
 <body>
+
   <h1>Hi, welcome to my personal website!</h1>
   <p>Visit each of the pages below to learn more about me and my work.</p>
 
+  <header>
+    <h1>Hi there! My name is Nandana</h1>
+    <p>Welcome to my personal website!</p>
+  </header>
+
+
   <nav>
-    <a href="index.html">Home</a> |
-    <a href="portfolio.html">Portfolio</a> |
-    <a href="qualifications.html">Qualifications</a> |
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="qualifications.html">Qualifications</a>
     <a href="service.html">Service</a>
+    <button id="toggle-style" aria-pressed="false" title="Switch website style">Toggle Style</button>
   </nav>
+
+  <main class="container">
+    <section>
+      <h2>A Little Bit About Me</h2>
+      <p>I am a junior computer science student at Texas A&M.</p>
+      <p>I am from San Antonio, Texas, but originally Chicago!</p>
+      <p>My first coding experience was with Girls Who Code, which sparked my love for programming.</p>
+    </section>
+
+    <section>
+      <h2>Explore More</h2>
+      <p>Visit each of the pages above to learn more about me and my work.</p>
+    </section>
+  </main>
+
+  <footer>
+    <h2>Let's Keep in Touch</h2>
+    <p>Email: nsuren1284@tamu.edu</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/nandanasurendran/" target="_blank">My LinkedIn</a></p>
+  </footer>
+
+  <script defer src="js/toggle.js"></script>
 </body>
 </html>

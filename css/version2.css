@@ -1,95 +1,120 @@
 
+:root {
+  --bg1: #0b1020;   /* deep night */
+  --bg2: #2b1331;   /* plum */
+  --sun1: #ff7b00;  /* orange */
+  --sun2: #ff3b6a;  /* magenta/pink */
+  --sun3: #5f3dc4;  /* indigo */
+  --panel: #101426; /* content panel */
+  --text: #f2f4ff;  /* near-white text */
+  --muted: #a9b0d4;
+  --link: #ffd166;  /* golden link */
+  --border: #2a3050;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
 body {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    background: linear-gradient(to bottom right, #ffd8b1, #ffb6b9, #fcd5ce);
-    color: #4b2e2e;
-  }
-  
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 70% 20%, rgba(255,123,0,.15), transparent 60%),
+    radial-gradient(900px 500px at 50% 0%, rgba(255,59,106,.12), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(95,61,196,.15), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+}
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
 
-  header {
-    background: linear-gradient(to right, #ffecd2, #fcb69f);
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-bottom: 2px solid #fcd5ce;
-  }
-  
-  header h1 {
-    font-size: 2.8rem;
-    color: #6b3e26;
-    margin-bottom: 0.5rem;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    color: #7a4e3c;
-  }
-  
+nav {
+  position: fixed; top: 0; left: 0;
+  width: 240px; height: 100vh;
+  background: rgba(10, 14, 30, 0.9);
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: .5rem;
+  padding: 1.1rem;
+  backdrop-filter: saturate(130%) blur(6px);
+}
 
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1rem 0;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #6b3e26;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    background-color: #ffe5b4;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav a:hover {
-    background-color: #fcb69f;
-  }
-  
+nav h1 {
+  font-size: 1.2rem; margin: .25rem 0 .75rem 0; color: var(--link);
+  text-transform: uppercase; letter-spacing: .09em;
+}
 
-  section {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background-color: #fff8f0;
-    border-left: 5px solid #fcb69f;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border-radius: 10px;
-  }
-  
-  section h2 {
-    color: #6b3e26;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
+nav a {
+  display: block; text-decoration: none; color: var(--text);
+  padding: .65rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;                      
+  background: linear-gradient(180deg, #141a34, #0f1430);
+  transition: background .2s ease, transform .08s ease;
+  font-weight: 600;
+}
 
-  footer {
-    background-color: #ffe5b4;
-    padding: 2rem;
-    text-align: center;
-    color: #6b3e26;
-    border-top: 2px solid #fcd5ce;
-  }
-  
+nav a:hover {
+  background: linear-gradient(180deg, #1b2346, #131936);
+  transform: translateX(2px);
+}
 
-  body::before {
-    content: "";
-    background-image: url('https://www.transparenttextures.com/patterns/cream-dust.png');
-    opacity: 0.1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  
+nav a[aria-current="page"] {
+  outline: 2px solid var(--link);
+}
+
+
+.container, main, header, section, footer {
+  margin-left: 260px;
+}
+
+header {
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+header h1 {
+  margin: 0 0 .5rem 0;
+  font-size: 2.1rem;
+  background: linear-gradient(90deg, var(--sun1), var(--sun2), var(--sun3));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+header p { color: var(--muted); margin: 0; }
+
+.container { max-width: 1100px; padding: 1.5rem 2rem; }
+
+section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;               
+  padding: 1.25rem 1.4rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,.22);
+}
+
+section h2 { margin: 0 0 .75rem; font-size: 1.6rem; color: var(--text); }
+
+
+button, .btn, input[type="submit"] {
+  font: inherit; color: #0e1022; background: var(--link);
+  border: none; border-radius: 4px;   
+  padding: .6rem 1rem; cursor: pointer; font-weight: 800;
+}
+
+button:hover, .btn:hover, input[type="submit"]:hover {
+  filter: brightness(1.08);
+}
+
+input, textarea, select {
+  width: 100%; font: inherit; color: var(--text); background: #0f142a;
+  border: 1px solid var(--border); border-radius: 6px; 
+  padding: .6rem .8rem;
+}
+
+a { color: var(--link); }
+footer { padding: 2rem; color: var(--muted); }
+
+
+@media (max-width: 800px) {
+  nav { position: static; width: auto; height: auto; flex-direction: row; overflow-x: auto; }
+  .container, main, header, section, footer { margin-left: 0; }
+}

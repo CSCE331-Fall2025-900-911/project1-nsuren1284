@@ -13,30 +13,47 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
       font-family: 'Trebuchet MS', sans-serif;
       color: #FFD700; /* gold */
     }
-
+  
     nav {
       margin: 1rem 0;
+      z-index: 2;
+      text-align: center;
     }
-
+  
     nav a {
       color: #FFD700;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
-
+  
+    main {
+      flex: 1; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;    
+      z-index: 1;
+      text-align: center;
+      padding: 1rem;
+    }
+  
     h1 {
-      margin-top: 2rem;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
                    0 0 20px rgba(255, 215, 0, 0.5);
     }
-
+  
+    h2, h4 {
+      max-width: 900px;
+      line-height: 1.5;
+      margin: 0.5rem 0;
+    }
+  
     .firefly {
       position: absolute;
       width: 6px;
@@ -46,22 +63,20 @@
       animation: float 8s linear infinite, blink 2s ease-in-out infinite alternate;
       opacity: 0.8;
     }
-
+  
     @keyframes float {
       from { transform: translateY(0) translateX(0); }
       to { transform: translateY(-100vh) translateX(50vw); }
     }
-
+  
     @keyframes blink {
       from { opacity: 0.2; }
       to { opacity: 1; }
     }
-
-    main {
-      z-index: 1; 
-      margin-top: 3rem;
-    }
   </style>
+  
+
+
 </head>
 <body>
 

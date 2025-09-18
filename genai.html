@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thanks for Visiting!</title>
-
+  <meta charset="UTF-8">
+  <title>GenAI Page</title>
 
   <style>
     body {
@@ -15,55 +13,91 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       text-align: center;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-family: 'Trebuchet MS', sans-serif;
+      color: #FFD700; 
+    }
+
+    nav {
+      margin: 1rem 0;
+    }
+
+    nav a {
       color: #FFD700;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
+      margin-top: 2rem;
+      font-size: 2.5rem;
       text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
                    0 0 20px rgba(255, 215, 0, 0.5);
-      margin-bottom: 1.5rem;
     }
 
-    .contact {
-      font-size: 1.2rem;
-      line-height: 2rem;
-      background: rgba(11, 29, 58, 0.6);
-      padding: 1rem 2rem;
-      border-radius: 0.5rem;
-      border: 1px solid rgba(255, 215, 0, 0.5);
-    }
-
-
-    .star {
+    .firefly {
       position: absolute;
-      background: white;
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, #ffff99 40%, transparent 70%);
       border-radius: 50%;
+      animation: float 8s linear infinite, blink 2s ease-in-out infinite alternate;
       opacity: 0.8;
-      animation: twinkle 2s infinite ease-in-out alternate;
     }
 
-    @keyframes twinkle {
+    @keyframes float {
+      from { transform: translateY(0) translateX(0); }
+      to { transform: translateY(-100vh) translateX(50vw); }
+    }
+
+    @keyframes blink {
       from { opacity: 0.2; }
       to { opacity: 1; }
+    }
+
+    main {
+      z-index: 1; 
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
-  
-  <div id="stars"></div>
 
-  <h1>Thanks for Visiting</h1>
+  <!-- Fireflies container -->
+  <div id="fireflies"></div>
 
-  <div class="contact">
-    <p>Email: nsuren1284@tamu.edu</p>
-    <p>Github: github.com/nandanasurendran</p>
-  </div>
+  <!-- Nav bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="qualifications.html">Qualifications</a>
+    <a href="service.html">Service</a>
+    <a href="genai.html" aria-current="page">GenAI</a>
+  </nav>
+
+  <!-- Centered Title -->
+  <main>
+    <h1> "Thanks for visiting my site!</h1>
+    <h2> It has been a pleasure to showcase more about me and my skills to you. Feel free to reach out, and let's talk over a cup of joe!</h2>
+    <h2>My Gen AI Prompt: Create a visually aesthetic html page with a navy blue background that has glowing yellow text. The website should have a starry night/firefly mood, and appropriate font that matches the vibe. "Thanks for visiting" should be front and center with glowy text, and beneath it more of my contact information of email which can be fillers for now.</h2>
+    <!-- You can add your prompt box or generated content below -->
+  </main>
 
   <script>
+    const firefliesContainer = document.getElementById("fireflies");
 
+    for (let i = 0; i < 40; i++) {  
+      let f = document.createElement("div");
+      f.className = "firefly";
+      f.style.top = Math.random() * 100 + "vh";
+      f.style.left = Math.random() * 100 + "vw";
+      f.style.animationDuration = 6 + Math.random() * 10 + "s";
+      f.style.animationDelay = Math.random() * 5 + "s";
+      firefliesContainer.appendChild(f);
+    }
+  </script>
+
+</body>
+</html>

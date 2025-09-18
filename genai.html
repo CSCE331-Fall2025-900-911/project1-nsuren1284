@@ -9,14 +9,14 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background: #0b1d3a; 
+      background: #0b1d3a; /* dark night */
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       font-family: 'Trebuchet MS', sans-serif;
-      color: #FFD700; 
+      color: #FFD700; /* gold */
     }
 
     nav {
@@ -65,10 +65,10 @@
 </head>
 <body>
 
-  <!-- Fireflies container -->
+
   <div id="fireflies"></div>
 
-  <!-- Nav bar -->
+
   <nav>
     <a href="index.html">Home</a>
     <a href="portfolio.html">Portfolio</a>
@@ -77,18 +77,18 @@
     <a href="genai.html" aria-current="page">GenAI</a>
   </nav>
 
-  <!-- Centered Title -->
   <main>
-    <h1> "Thanks for visiting my site!</h1>
+    <h1> Thanks for visiting my site!</h1>
     <h2> It has been a pleasure to showcase more about me and my skills to you. Feel free to reach out, and let's talk over a cup of joe!</h2>
-    <h2>My Gen AI Prompt: Create a visually aesthetic html page with a navy blue background that has glowing yellow text. The website should have a starry night/firefly mood, and appropriate font that matches the vibe. "Thanks for visiting" should be front and center with glowy text, and beneath it more of my contact information of email which can be fillers for now.</h2>
-    <!-- You can add your prompt box or generated content below -->
+    <h4>My Gen AI Prompt: Create a visually aesthetic html page with a navy blue background that has glowing yellow text. 
+    <h4>The website should have a starry night/firefly mood, and appropriate font that matches the vibe. "Thanks for visiting" should be front and center with glowy text, and beneath it more of my contact information of email which can be fillers for now.</h4>
+
   </main>
 
   <script>
     const firefliesContainer = document.getElementById("fireflies");
 
-    for (let i = 0; i < 40; i++) {  
+    for (let i = 0; i < 40; i++) {  // number of fireflies
       let f = document.createElement("div");
       f.className = "firefly";
       f.style.top = Math.random() * 100 + "vh";
